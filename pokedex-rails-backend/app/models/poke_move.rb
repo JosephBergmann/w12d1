@@ -11,8 +11,9 @@
 class PokeMove < ApplicationRecord
     belongs_to :pokemon,
         foreign_key: :pokemon_id,
-        class_name: :Pokemon
-
+        class_name: :Pokemon,
+        dependent: :destroy
+        
     belongs_to :move,
         foreign_key: :move_id,
         class_name: :Move
